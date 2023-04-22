@@ -1,0 +1,15 @@
+/* 页面切换动画 */
+.page-enter-active, .page-leave-active {
+  transition: opacity 0.2s;
+}
+.page-enter, .page-leave-active {
+  opacity: 0;
+}
+
+body{
+  -webkit-text-size-adjust: 100% !important;
+  font-family: PingFang-SC-Medium;
+}
+::-webkit-scrollbar{
+	display:none
+}

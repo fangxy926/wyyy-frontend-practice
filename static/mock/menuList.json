@@ -1,0 +1,60 @@
+{
+    "hasError": 0,
+    "errorMessage": "",
+    "data": [{
+        "menuID": 1,
+        "menuName": "取报告单",
+        "menuCode": "1",
+        "iconName": "https://eds.wzhospital.cn:12000/sysmanage-menuicon-prod/106300?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20230417T045308Z&X-Amz-SignedHeaders=host&X-Amz-Expires=604800&X-Amz-Credential=N6R0F8FYHI5TUFE4QCKQ%2F20230417%2Fcn-north-1%2Fs3%2Faws4_request&X-Amz-Signature=58dd5dba1a3b1969380ac15a847ace2efb8f352ba047fbb8ddaa292fb523111d",
+        "pathUrl":""
+    },{
+        "menuID": 2,
+        "menuName": "门诊预约",
+        "menuCode": "2",
+        "iconName": "https://eds.wzhospital.cn:12000/sysmanage-menuicon-prod/106301?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20230417T045308Z&X-Amz-SignedHeaders=host&X-Amz-Expires=604800&X-Amz-Credential=N6R0F8FYHI5TUFE4QCKQ%2F20230417%2Fcn-north-1%2Fs3%2Faws4_request&X-Amz-Signature=5e9a0390b62fb99f65e91da80f359a6be746f3a3848aeb261dd052f4a956f533",
+        "pathUrl":""
+    }, {
+        "menuID": 3,
+        "menuName": "门诊签到",
+        "menuCode": "3",
+        "iconName": "https://eds.wzhospital.cn:12000/sysmanage-menuicon-prod/106305?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20230417T045308Z&X-Amz-SignedHeaders=host&X-Amz-Expires=604800&X-Amz-Credential=N6R0F8FYHI5TUFE4QCKQ%2F20230417%2Fcn-north-1%2Fs3%2Faws4_request&X-Amz-Signature=daa6ae0490f4ec35983c2d1ad76aea10e41b2579b342fffbbf4956bacf0fa439",
+        "pathUrl":""
+    },{
+        "menuID": 4,
+        "menuName": "充值中心",
+        "menuCode": "4",
+        "iconName": "https://eds.wzhospital.cn:12000/sysmanage-menuicon-prod/106306?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20230417T045308Z&X-Amz-SignedHeaders=host&X-Amz-Expires=604800&X-Amz-Credential=N6R0F8FYHI5TUFE4QCKQ%2F20230417%2Fcn-north-1%2Fs3%2Faws4_request&X-Amz-Signature=e7cf0b9df01cd20af85ab726a2cc34b51989a16da40c3b46d35bb0c74d3a256c",
+        "pathUrl":""
+    },{
+        "menuID": 5,
+        "menuName": "在线支付",
+        "menuCode": "5",
+        "iconName": "https://eds.wzhospital.cn:12000/sysmanage-menuicon-prod/106307?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20230417T045308Z&X-Amz-SignedHeaders=host&X-Amz-Expires=604800&X-Amz-Credential=N6R0F8FYHI5TUFE4QCKQ%2F20230417%2Fcn-north-1%2Fs3%2Faws4_request&X-Amz-Signature=d22cbbaad54282941db36e998775e8f86b675feb32005e8dfe9a3dc0f0d231d4",
+        "pathUrl":""
+    },{
+        "menuID": 6,
+        "menuName": "检查预约",
+        "menuCode": "6",
+        "iconName": "https://eds.wzhospital.cn:12000/sysmanage-menuicon-prod/106670?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20230417T045308Z&X-Amz-SignedHeaders=host&X-Amz-Expires=604800&X-Amz-Credential=N6R0F8FYHI5TUFE4QCKQ%2F20230417%2Fcn-north-1%2Fs3%2Faws4_request&X-Amz-Signature=f1c6215eb2243e2d72cf45a77e426e96aa674c083ab1ffb499a1ac2c96dc4ffe",
+        "pathUrl":""
+    },{
+        "menuID": 7,
+        "menuName": "费用清单",
+        "menuCode": "6",
+        "iconName": "https://eds.wzhospital.cn:12000/sysmanage-menuicon-prod/106670?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20230417T045308Z&X-Amz-SignedHeaders=host&X-Amz-Expires=604800&X-Amz-Credential=N6R0F8FYHI5TUFE4QCKQ%2F20230417%2Fcn-north-1%2Fs3%2Faws4_request&X-Amz-Signature=f1c6215eb2243e2d72cf45a77e426e96aa674c083ab1ffb499a1ac2c96dc4ffe",
+        "pathUrl":""
+    },{
+        "menuID": 8,
+        "menuName": "手术动态",
+        "menuCode": "6",
+        "iconName": "https://eds.wzhospital.cn:12000/sysmanage-menuicon-prod/106670?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20230417T045308Z&X-Amz-SignedHeaders=host&X-Amz-Expires=604800&X-Amz-Credential=N6R0F8FYHI5TUFE4QCKQ%2F20230417%2Fcn-north-1%2Fs3%2Faws4_request&X-Amz-Signature=f1c6215eb2243e2d72cf45a77e426e96aa674c083ab1ffb499a1ac2c96dc4ffe",
+        "pathUrl":""
+    },{
+        "menuID": 9,
+        "menuName": "住院须知",
+        "menuCode": "6",
+        "iconName": "https://eds.wzhospital.cn:12000/sysmanage-menuicon-prod/106670?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20230417T045308Z&X-Amz-SignedHeaders=host&X-Amz-Expires=604800&X-Amz-Credential=N6R0F8FYHI5TUFE4QCKQ%2F20230417%2Fcn-north-1%2Fs3%2Faws4_request&X-Amz-Signature=f1c6215eb2243e2d72cf45a77e426e96aa674c083ab1ffb499a1ac2c96dc4ffe",
+        "pathUrl":""
+    }]
+}
+       

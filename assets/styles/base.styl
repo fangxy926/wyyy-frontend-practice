@@ -1,0 +1,45 @@
+@import '~styles/color';
+
+//大小==================================
+$headerH=.86rem
+$fontA= .86rem
+$fontB= 1.15rem
+$fontC= 1.4rem
+$fontD= 1.6rem
+$fontE= 1.8rem
+//======================================
+
+//头部样式===============================
+headerStyl()
+  position relative
+  overflow hidden
+  height $headerH
+  line-height $headerH
+  text-align center
+  color #fff
+  background $baseColor
+  font-size .3rem
+  font-weight bold
+//======================================
+
+// 输入框/搜索框样式=====================
+inputStyl()
+  box-sizing border-box
+  width 100%
+  height .62rem
+  padding .1rem
+  line-height .62rem
+  border-radius .1rem
+  text-align center
+  color #666
+//======================================
+
+ //字体过多时，显示为...======================================
+elipsis()
+    overflow hidden  
+    white-space nowrap
+    text-overflow ellipsis
+//======================================
+borderBottom(){
+  border-bottom: 1px solid #eee;
+}

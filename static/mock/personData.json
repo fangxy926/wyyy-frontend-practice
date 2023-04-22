@@ -1,0 +1,13 @@
+{
+    "hasError": 0,
+    "errorMessage": "",
+    "data": {
+        "userid": 123,
+        "mail": "11541544444@qq.com",
+        "idcard": "33030419980730086X",
+        "name": "张三",
+        "alias": "三",
+        "phone": "17768541212",
+        "address": "浙江温州"
+    }
+}
