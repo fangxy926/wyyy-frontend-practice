@@ -1,66 +1,78 @@
 <template>
-    <div class="container">
-      <div>
-        hello
-      </div>
+  <div class="login-container">
+    <div class="login-box">
+      <h1 class="login-title">快速登录</h1>
+      <van-form ref="loginForm" :model="loginForm" :rules="rules" label-width="80px" @submit="onSubmit">
+        <van-field v-model="loginForm.username" name="username" label="用户名" placeholder="请输入用户名" required
+          :rules="[{ required: true, message: '用户名必填！' }]" />
+        <van-field v-model="loginForm.password" name="password" label="密码" placeholder="请输入密码" type="password" required
+          :rules="[{ required: true, message: '密码必填！' }]" />
+        <div class="login-btn">
+          <van-button round block type="info" native-type="submit">登录</van-button>
+        </div>
+      </van-form>
     </div>
-  </template>
-  
-  <script>
-  import { newList } from '~/api/messageApi'
-  export default {
-    head() {
-      return {
-        title: '首页',
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      loginForm: {
+        username: "",
+        password: "",
+      },
+      rules: {
+        username: [{ required: true, message: "用户名必填！" }],
+        password: [{ required: true, message: "密码必填！" }],
+      },
+      loading: false,
+    };
+  },
+  methods: {
+    onSubmit() {
+      const valid = this.$refs.loginForm.validate();
+      if (valid) {
+        this.loading = true;
+        // 在这里编写登录逻辑
+
+        // todo 用户信息保存在session中
+        this.$router.push("/")
+        this.loading = false
       }
     },
-    layout: 'base',
-    data() {
-      return {
-     
-      }
-    },
-    mounted() {
-      this.getNewList()
-    },
-    methods: {
-      // mock 本地接口模拟
-      getNewList(){
-        newList().then(res=>{
-          if(res.ok){
-            console.log(res.data)
-          }
-        })
-      }
-  
-    },
-   
-  }
-  </script>
-  
-  <style lang="stylus" scoped>
-  .container
-    margin 0 auto
-    min-height 100vh
-    display flex
-    justify-content center
-    align-items center
-    text-align center
-  .title
-    font-family 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif
-    display block
-    font-weight 300
-    font-size 0.28rem
-    color #35495e
-    letter-spacing 1px
-  .subtitle
-    font-weight 300
-    font-size 0.42rem
-    color #526488
-    word-spacing 0.05rem
-    padding-bottom 0.15rem
-  .links
-    padding-top 1.5rem
-  .btn
-    margin-top 1.5rem
-  </style>
+  },
+};
+</script>
+
+<style>
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  height: 100%;
+}
+
+.login-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-title {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.login-btn {
+  margin-top: 35px;
+  width: 100%;
+}
+
+.login-box .van-cell {
+  border-bottom: 0.5px solid #999;
+}
+</style>

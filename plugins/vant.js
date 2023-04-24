@@ -12,6 +12,7 @@ import {
   Toast,
   Loading,
   Button,
+  Form,
   Field,
   Icon,
   Tabbar, TabbarItem,
@@ -21,7 +22,7 @@ import {
   Grid, GridItem,
   List,
   Cell, CellGroup,
-  Card 
+  Card
 } from 'vant'
 
 const components = {
@@ -30,16 +31,17 @@ const components = {
   Toast,
   Loading,
   Button,
+  Form,
   Field,
   Icon,
-  Tabbar,TabbarItem,
+  Tabbar, TabbarItem,
   NavBar,
   Divider,
   Search,
   Grid, GridItem,
   List,
   Cell, CellGroup,
-  Card 
+  Card
 }
 
 Object.keys(components).forEach((key) => {

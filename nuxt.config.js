@@ -67,6 +67,12 @@ export default {
     extendRouters(routes, resolve) {
       route.push(
         {
+          name: 'home',
+          path: '/',
+          component: resolve(__dirname, 'pages/index.vue')
+
+        },
+        {
           name: 'login',
           path: '/login',
           component: resolve(__dirname, 'pages/login.vue')
@@ -77,8 +83,8 @@ export default {
           component: resolve(__dirname, 'pages/openinphone.vue')
         },
         {
-          name:'newsDetail',
-          path:'/newsDetail/:newsID',
+          name: 'newsDetail',
+          path: '/newsDetail/:newsID',
           component: resolve(__dirname, 'pages/newsDetail.vue')
         }
       )
