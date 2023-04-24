@@ -1,15 +1,7 @@
-<!--
- * @Description: 
- * @Author: lxc
- * @Date: 2019-07-02 15:47:13
- * @LastEditTime: 2022-07-06 10:40:40
- * @LastEditors: dandan
- -->
 <template>
   <div class="home">
-    <van-nav-bar title="首页" :left-arrow="false" />
-    <!-- <van-divider /> -->
-    <van-search v-model="search" placeholder="搜索菜单" shape="round" />
+    <Header :titleVal="'首页'" />
+    <van-search class="menu-search" v-model="search" placeholder="搜索菜单" shape="round" />
     <van-divider />
     <div class="menu">
       <van-grid :column-num="3" :border="false">
@@ -23,10 +15,13 @@
 
 <script>
 import { menuList } from '@/api/menuApi.js'
+import Header from '@/components/header/index.vue'
+
 import BottomNavigationBar from '@/components/bottomNavigationBar/index.vue'
 export default {
   components: {
-    BottomNavigationBar
+    BottomNavigationBar,
+    Header
   },
 
   head() {
@@ -53,14 +48,24 @@ export default {
         }
       })
     }
-
   },
 
 }
 </script>
 
-<style scoped>
+<style>
 .home {
-  background-color: #fafafa
+  background-color: #fafafa;
+  /** 不可滚动 */
+  overflow: hidden;
+
+}
+
+.home .van-nav-bar__title {
+  font-weight: bold;
+}
+
+.menu-search {
+  margin-top: 50px;
 }
 </style>

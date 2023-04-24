@@ -75,6 +75,11 @@ export default {
           name: 'openinphone',
           path: '/openinphone',
           component: resolve(__dirname, 'pages/openinphone.vue')
+        },
+        {
+          name:'newsDetail',
+          path:'/newsDetail/:newsID',
+          component: resolve(__dirname, 'pages/newsDetail.vue')
         }
       )
     }

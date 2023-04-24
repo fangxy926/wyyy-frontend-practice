@@ -1,3 +1,5 @@
 import { gMock } from './mockapi.js'
 const newList = gMock('mock/newList.json')
-export { newList }
+const newDetail = gMock('mock/newDetail1.json')
+
+export { newList, newDetail }

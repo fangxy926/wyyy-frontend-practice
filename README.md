@@ -1,6 +1,4 @@
-# masses_nuxt
-
-> 温附一服务
+# 实习前端作业（2023.04）
 
 ## Build Setup
 

@@ -17,7 +17,7 @@
           : error.message
       }}
     </h2>
-    <nuxt-link v-if="error.statusCode === 404" class="button" to="/home">
+    <nuxt-link v-if="error.statusCode === 404" class="button" to="/">
       返回首页
     </nuxt-link>
   </section>

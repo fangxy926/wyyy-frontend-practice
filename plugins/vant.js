@@ -14,12 +14,14 @@ import {
   Button,
   Field,
   Icon,
-  Tabbar,
-  TabbarItem,
+  Tabbar, TabbarItem,
   NavBar,
   Divider,
   Search,
-  Grid, GridItem
+  Grid, GridItem,
+  List,
+  Cell, CellGroup,
+  Card 
 } from 'vant'
 
 const components = {
@@ -30,12 +32,14 @@ const components = {
   Button,
   Field,
   Icon,
-  Tabbar,
-  TabbarItem,
+  Tabbar,TabbarItem,
   NavBar,
   Divider,
   Search,
-  Grid, GridItem
+  Grid, GridItem,
+  List,
+  Cell, CellGroup,
+  Card 
 }
 
 Object.keys(components).forEach((key) => {

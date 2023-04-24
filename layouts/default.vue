@@ -9,17 +9,14 @@
   <div id="App">
     <loading v-model="isLoading" />
     <nuxt />
-    <!-- <BottomNavigationBar/> -->
   </div>
 </template>
 <script>
 import loading from '@/components/loading'
-// import BottomNavigationBar from '@/components/bottomNavigationBar/index.vue'
 export default {
   name: 'DefaultLayouts',
   components: {
     loading,
-    // BottomNavigationBar 
   },
   data() {
     return {

@@ -13,6 +13,7 @@ import actions from './actions'
 import mutations from './mutations'
 import getters from './getters'
 import home from './modules/home'
+import tabbar from './modules/tabbar'
 Vue.use(Vuex)
 
 let store
@@ -24,13 +25,14 @@ const initStore = () => {
     (store = new Vuex.Store({
       // 存放公用数据
       state,
-      // 异步操作要通过actions，否则通过cimmit直接操作mutations
+      // 异步操作要通过actions，否则通过commit直接操作mutations
       actions,
       // 同步放数据
       mutations,
       getters,
       modules: {
         home,
+        tabbar
       },
     }))
   )
