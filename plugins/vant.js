@@ -22,7 +22,8 @@ import {
   Grid, GridItem,
   List,
   Cell, CellGroup,
-  Card
+  Card,
+  Image as VanImage
 } from 'vant'
 
 const components = {
@@ -41,7 +42,8 @@ const components = {
   Grid, GridItem,
   List,
   Cell, CellGroup,
-  Card
+  Card,
+  VanImage
 }
 
 Object.keys(components).forEach((key) => {

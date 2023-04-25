@@ -1,4 +1,5 @@
 export function isIdCardNo(num) {
+  console.log(num)
   // 校验身份证是否合法
   const jR = { success: 0, msg: '', new18Str: '' }
   // new18Str:将15位的自动转为18位的

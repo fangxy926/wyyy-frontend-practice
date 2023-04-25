@@ -26,7 +26,7 @@ export default {
             items: [
                 { name: 'news', icon: 'user-o', text: '新闻', path: '/news' },
                 { name: 'home', icon: 'user-o', text: '功能', path: '/' },
-                { name: 'info', icon: 'user-o', text: '个人信息', path: '/info' },
+                { name: 'info', icon: 'user-o', text: '个人信息', path: '/userinfo' },
             ],
         }
     },

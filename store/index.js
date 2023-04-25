@@ -14,6 +14,7 @@ import mutations from './mutations'
 import getters from './getters'
 import home from './modules/home'
 import tabbar from './modules/tabbar'
+import user from './modules/user'
 Vue.use(Vuex)
 
 let store
@@ -32,7 +33,8 @@ const initStore = () => {
       getters,
       modules: {
         home,
-        tabbar
+        tabbar,
+        user
       },
     }))
   )

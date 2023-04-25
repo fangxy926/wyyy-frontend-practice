@@ -32,7 +32,6 @@ export default {
       { 'http-equiv': 'expires', content: '0' },
       {
         name: 'viewport',
-
         content:
           'width=device-width, initial-scale=1,minimum-scale=1.0,maximum-scale=1.0 user-scalable=no'
       },
@@ -86,6 +85,12 @@ export default {
           name: 'newsDetail',
           path: '/newsDetail/:newsID',
           component: resolve(__dirname, 'pages/newsDetail.vue')
+        },
+        {
+          name: 'userinfo',
+          path: '/userinfo',
+          component: resolve(__dirname, 'pages/userinfo.vue')
+
         }
       )
     }
