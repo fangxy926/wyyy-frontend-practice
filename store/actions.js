@@ -5,15 +5,11 @@
  * @Description: Modify here please
  * @LastEditTime: 2022-06-30 17:05:06
  */
-/**
- * 根级别的 action,异步vuex
- */
-
 export default {
   hideLoading({ commit }) {
     commit('SET_LOADING', false)
   },
   showLoading({ commit }) {
     commit('SET_LOADING', true)
-  },
+  }
 }

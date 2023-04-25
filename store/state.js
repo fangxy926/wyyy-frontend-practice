@@ -9,5 +9,5 @@
 let token = ''
 
 export default {
-  token,
+  token
 }

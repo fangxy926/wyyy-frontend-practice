@@ -29,7 +29,7 @@ export default {
       title: '首页',
     }
   },
-  layout: 'base',
+  layout: 'default',
   data() {
     return {
       search: "",

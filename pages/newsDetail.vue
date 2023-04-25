@@ -17,7 +17,7 @@ export default {
     components: {
         BackNaviationBar
     },
-    layout: 'base',
+    layout: 'default',
     data() {
         return {
             newsDetailData: {},

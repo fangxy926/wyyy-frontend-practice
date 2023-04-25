@@ -22,7 +22,7 @@ export default {
     BottomNavigationBar,
     Header
   },
-  layout: 'base',
+  layout: 'default',
   data() {
     return {
       search: "",

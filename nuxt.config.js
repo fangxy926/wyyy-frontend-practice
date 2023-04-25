@@ -1,10 +1,3 @@
-/*
- * @Description:
- * @Author: lxc
- * @Date: 2019-07-02 15:47:13
- * @LastEditTime: 2022-01-18 14:18:09
- * @LastEditors: jiajia
- */
 const path = require('path')
 const PostCompilePlugin = require('webpack-post-compile-plugin')
 const TransformModulesPlugin = require('webpack-transform-modules-plugin')
@@ -52,7 +45,7 @@ export default {
       // TODO: 发布之前要检查
       { src: process.env.LU_YOU + 'wxHide.js' },
       { src: process.env.LU_YOU + 'rem.js' },
-      { src: process.env.LU_YOU + 'zfbHide.js' }
+      // { src: process.env.LU_YOU + 'zfbHide.js' }
     ]
   },
   /*
@@ -108,6 +101,7 @@ export default {
   ],
   plugins: [
     { src: '@/plugins/localStorage.js', mode: 'client' },
+    { src: '@/plugins/auth.js', mode: 'client' },
     '@/plugins/vant.js',
     '@/plugins/utils.js',
     '@/plugins/extend',
@@ -118,7 +112,7 @@ export default {
     '@/plugins/route',
     '@/plugins/icon',
     '@/plugins/bridge',
-    '@/plugins/vueInject.js'
+    '@/plugins/vueInject.js',
   ],
 
   /*
@@ -179,7 +173,7 @@ export default {
       config.resolve.alias.styles = 'assets/styles'
       config.resolve.alias.api = '../api'
       config.resolve.alias.utils = './utils'
-
+      config.resolve.alias['@'] = path.resolve(__dirname, '')
       const svgRule = config.module.rules.find(rule => rule.test.test('.svg'))
       svgRule.exclude = [path.resolve(__dirname, 'assets/icons/svg')]
 

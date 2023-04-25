@@ -17,6 +17,7 @@
 
 <script>
 export default {
+  layout: 'default',
   data() {
     return {
       loginForm: {
@@ -37,7 +38,9 @@ export default {
         this.loading = true;
         // 在这里编写登录逻辑
 
-        // todo 用户信息保存在session中
+        // todo 用户信息保存在storage中
+        this.$store.dispatch('user/userLogin', this.loginForm)
+        this.$store.dispatch('tabbar/setActiveTabbarItem', 'home')
         this.$router.push("/")
         this.loading = false
       }

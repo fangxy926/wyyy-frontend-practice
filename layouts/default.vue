@@ -1,10 +1,4 @@
-<!--
- * @Descripttion: 
- * @Author: jiajia
- * @Date: 2022-06-30 14:54:12
- * @LastEditors: jiajia
- * @LastEditTime: 2022-06-30 16:16:04
--->
+
 <template>
   <div id="App">
     <loading v-model="isLoading" />
@@ -28,7 +22,8 @@ export default {
       return this.$route.query
     },
   },
-  created() {
+  beforeCreate() {
+    // this.$store.dispatch('user/getUser')
   },
   mounted() {
     window.response = true

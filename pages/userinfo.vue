@@ -37,6 +37,7 @@ import { Dialog } from 'vant';
 import BottomNavigationBar from '@/components/bottomNavigationBar/index.vue'
 
 export default {
+    middleware: 'auth',
     components: {
         BottomNavigationBar,
         Header
@@ -96,7 +97,7 @@ export default {
                 title: '确定退出吗？',
             }).then(() => {
                 // on confirm
-
+                this.$store.dispatch('user/userLogout')
                 this.$router.push('/login')
             }).catch(() => {
                 // on cancel
