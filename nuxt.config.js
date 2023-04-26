@@ -58,7 +58,7 @@ export default {
     routeNameSplitter: '/',
     routes: [
       {
-        name: 'home',
+        name: 'index',
         path: '/',
         component: '~/pages/index.vue'
 
@@ -69,9 +69,9 @@ export default {
         component: '~/pages/login.vue'
       },
       {
-        name: 'openinphone',
-        path: '/openinphone',
-        component: '~/pages/openinphone.vue'
+        name: 'news',
+        path: '/news',
+        component: '~/pages/news.vue'
       },
       {
         name: 'newsDetail',
@@ -85,37 +85,6 @@ export default {
 
       }
     ],
-    // extendRouters(routes, resolve) {
-    //   routes.push(
-    //     {
-    //       name: 'home',
-    //       path: '/',
-    //       component: resolve(__dirname, 'pages/index.vue')
-
-    //     },
-    //     {
-    //       name: 'login',
-    //       path: '/login',
-    //       component: resolve(__dirname, 'pages/login.vue')
-    //     },
-    //     {
-    //       name: 'openinphone',
-    //       path: '/openinphone',
-    //       component: resolve(__dirname, 'pages/openinphone.vue')
-    //     },
-    //     {
-    //       name: 'newsDetail',
-    //       path: '/newsDetail/:newsID',
-    //       component: resolve(__dirname, 'pages/newsDetail.vue')
-    //     },
-    //     {
-    //       name: 'userinfo',
-    //       path: '/userinfo',
-    //       component: resolve(__dirname, 'pages/userinfo.vue')
-
-    //     }
-    //   )
-    // }
   },
   /*
    ** Global CSS 10.104.141.80

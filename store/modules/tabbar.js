@@ -1,5 +1,5 @@
 const state = {
-  activeTabbarItem: 'home',
+  activeTabbarItem: '',
 }
 
 const mutations = {

@@ -1,5 +1,5 @@
 <template>
-  <van-tabbar v-model="activeTabbarItem" class="botton-tabbar" @change="onChange">
+  <van-tabbar v-model="activeTabbarItem" class="botton-tabbar">
     <van-tabbar-item v-for="(item, index) in items" :key="index" :name="item.name" :icon="item.icon" :to="item.path">
       {{ item.text }}
     </van-tabbar-item>
@@ -7,35 +7,26 @@
 </template>
 
 <script>
-import { mapMutations } from 'vuex'
+// import { mapMutations } from 'vuex'
 
 export default {
   data() {
     return {
+      activeTabbarItem: '',
       items: [
         { name: 'news', icon: 'newspaper-o', text: '新闻', path: '/news' },
-        { name: 'home', icon: 'home-o', text: '功能', path: '/' },
-        { name: 'user', icon: 'user-o', text: '个人信息', path: '/userinfo' },
+        { name: 'index', icon: 'home-o', text: '功能', path: '/' },
+        { name: 'userinfo', icon: 'user-o', text: '个人信息', path: '/userinfo' },
       ],
     }
   },
-  computed: {
-    // ...mapState('tabbar', ['activeTabbarItem'])
-    activeTabbarItem: {
-      get() {
-        return this.$store.state.tabbar.activeTabbarItem;
-      },
-      set(val) {
-        this.setActiveTabbarItem(val);
-      }
-    }
+  watch: {
+    '$route.name'(val) {
+      this.activeTabbarItem = val;
+    },
   },
-  methods: {
-    ...mapMutations('tabbar', ['setActiveTabbarItem']),
-    onChange(tab) {
-      console.log("active:" + tab)
-      this.setActiveTabbarItem(tab)
-    }
+  mounted() {
+    this.activeTabbarItem = this.$route.name
   }
 }
 </script>
@@ -47,7 +38,7 @@ export default {
   width: 100%;
 }
 
-.botton-tabbar .van-tabbar-item{
+.botton-tabbar .van-tabbar-item {
   font-size: 16px;
 }
 
