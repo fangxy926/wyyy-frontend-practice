@@ -1,12 +1,12 @@
 <template>
   <div class="home">
     <Header :title-val="'首页'" />
-    <van-search v-model="search" class="menu-search" placeholder="搜索菜单" shape="round" />
+    <van-search v-model="search" class="menu-search" placeholder="搜索菜单" shape="round" @input="onSearch" />
     <van-divider />
     <div class="menu">
       <van-grid :column-num="3" :border="false">
         <van-grid-item
-          v-for="(item, index) in menuListData"
+          v-for="(item, index) in list"
           :key="index"
           :text="item.menuName"
           :icon="item.iconName"
@@ -40,6 +40,7 @@ export default {
     return {
       search: "",
       menuListData: [],
+      list: [],
     };
   },
   mounted() {
@@ -51,8 +52,18 @@ export default {
       menuList().then(res => {
         if (res.ok) {
           this.menuListData = res.data
+          this.list = this.menuListData
         }
       })
+    },
+    onSearch(val) {
+      console.log(val);
+      this.list = this.menuListData.filter(item => {
+        return item.menuName.toLowerCase().includes(val)
+      })
+    },
+    onCancel() {
+
     }
   },
 
