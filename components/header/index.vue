@@ -1,12 +1,19 @@
 <template>
-    <div class="header-class">
-        <van-nav-bar class="header-nav-bar" :title="titleVal" :left-arrow="false" />
-    </div>
+  <div class="header-class">
+    <van-nav-bar class="header-nav-bar" :title="titleVal" :left-arrow="false" />
+  </div>
 </template>
 
 <script>
 export default {
-    props: ['titleVal']
+    props: {
+        titleVal: {
+            type: String,
+            default: function () {
+                return ""
+            }
+        }
+    }
 }
 </script>
 

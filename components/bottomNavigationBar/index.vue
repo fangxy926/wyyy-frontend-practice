@@ -1,15 +1,24 @@
 <template>
-    <van-tabbar class="botton-tabbar" v-model="activeTabbarItem" @change="onChange">
-        <van-tabbar-item v-for="(item, index) in items" :key="index" :icon="item.icon" :name="item.name" :to="item.path">
-            {{ item.text }}
-        </van-tabbar-item>
-    </van-tabbar>
+  <van-tabbar v-model="activeTabbarItem" class="botton-tabbar" @change="onChange">
+    <van-tabbar-item v-for="(item, index) in items" :key="index" :icon="item.icon" :name="item.name" :to="item.path">
+      {{ item.text }}
+    </van-tabbar-item>
+  </van-tabbar>
 </template>
 
 <script>
 import { mapMutations } from 'vuex'
 
 export default {
+    data() {
+        return {
+            items: [
+                { name: 'news', icon: 'user-o', text: '新闻', path: '/news' },
+                { name: 'home', icon: 'user-o', text: '功能', path: '/' },
+                { name: 'info', icon: 'user-o', text: '个人信息', path: '/userinfo' },
+            ],
+        }
+    },
     computed: {
         // ...mapState('tabbar', ['activeTabbarItem'])
         activeTabbarItem: {
@@ -19,15 +28,6 @@ export default {
             set(val) {
                 this.setActiveTabbarItem(val);
             }
-        }
-    },
-    data() {
-        return {
-            items: [
-                { name: 'news', icon: 'user-o', text: '新闻', path: '/news' },
-                { name: 'home', icon: 'user-o', text: '功能', path: '/' },
-                { name: 'info', icon: 'user-o', text: '个人信息', path: '/userinfo' },
-            ],
         }
     },
     methods: {

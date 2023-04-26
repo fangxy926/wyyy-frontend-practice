@@ -9,6 +9,7 @@
 import loading from '@/components/loading'
 export default {
   name: 'DefaultLayouts',
+  // middleware: 'auth',
   components: {
     loading,
   },

@@ -57,7 +57,7 @@ export default {
     middleware: [],
     routeNameSplitter: '/',
     extendRouters(routes, resolve) {
-      route.push(
+      routes.push(
         {
           name: 'home',
           path: '/',

@@ -1,10 +1,12 @@
 <template>
   <div class="news">
-    <Header :titleVal="'新闻'" />
+    <Header :title-val="'新闻'" />
     <van-list class="news-list">
       <van-cell v-for="item in newListData" :key="item.ID" :title="item.BT" @click="goToDetail(item.ID)">
         <template #label>
-          <div class="cell-label">{{ formatDate(item.TJSJ) }}</div>
+          <div class="cell-label">
+            {{ formatDate(item.TJSJ) }}
+          </div>
         </template>
       </van-cell>
     </van-list>
@@ -64,6 +66,7 @@ export default {
   display: flex;
   justify-content: flex-end;
 }
+
 .news-list {
   position: fixed;
   top: 50px;
@@ -71,6 +74,7 @@ export default {
   overflow-y: scroll;
   width: 100%;
 }
+
 .van-cell::after {
   border-bottom: 2px solid #dfe2e8;
 }

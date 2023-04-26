@@ -8,7 +8,7 @@
 import dateUtil from 'date-fns'
 import store from '@/store'
 import { isIdCardNo } from './IDCardNoVeri'
-
+import CryptoJS from 'crypto-js'
 export function isEmpty(val) {
   if (val === '') return true // 检验空字符串
   if (val === 'null') return true // 检验字符串类型的null
@@ -66,7 +66,7 @@ export function getCurrServerTime() {
 export function callPhone(context, phone) {
   if (store().getters.isApp) {
     if (!store().getters.isAndroid) {
-      context.$bridge.callhandler('callPhone', phone, (data) => {})
+      context.$bridge.callhandler('callPhone', phone, (data) => { })
     } else {
       jsBridge.callPhoneNumber(phone)
     }
@@ -188,7 +188,7 @@ export function getContentStr(content, leftStr, rightStr) {
 export function throttle(fn, t) {
   let flag = true
   const interval = t || 500
-  return function() {
+  return function () {
     const args = arguments
     if (flag) {
       fn.apply(this, args)
@@ -198,4 +198,13 @@ export function throttle(fn, t) {
       }, interval)
     }
   }
+}
+
+/**
+ * MD5加密
+ * @param {string} str 
+ * @returns 
+ */
+export function md5Encrypt(str) {
+  return CryptoJS.MD5(str).toString();
 }

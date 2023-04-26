@@ -1,12 +1,18 @@
 <template>
   <div class="home">
-    <Header :titleVal="'首页'" />
-    <van-search class="menu-search" v-model="search" placeholder="搜索菜单" shape="round" />
+    <Header :title-val="'首页'" />
+    <van-search v-model="search" class="menu-search" placeholder="搜索菜单" shape="round" />
     <van-divider />
     <div class="menu">
       <van-grid :column-num="3" :border="false">
-        <van-grid-item v-for="(item, index) in menuListData" :key="index" :text="item.menuName" :icon="item.iconName"
-          :url="item.pathUrl" center />
+        <van-grid-item
+          v-for="(item, index) in menuListData"
+          :key="index"
+          :text="item.menuName"
+          :icon="item.iconName"
+          :url="item.pathUrl"
+          center
+        />
       </van-grid>
     </div>
     <BottomNavigationBar />
