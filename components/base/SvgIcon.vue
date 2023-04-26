@@ -40,8 +40,8 @@ export default {
 </script>
 <style lang="stylus" scoped>
 .svg-icon {
-  width: 4rem;
-  height: 5.5rem;
+  width: 1rem;
+  height: 1rem;
   vertical-align: -0.15em;
   fill: currentColor;
   overflow: hidden;

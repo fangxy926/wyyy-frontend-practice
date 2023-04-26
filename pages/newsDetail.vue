@@ -52,6 +52,7 @@ export default {
 <style >
 .news-body {
   padding: 20px;
+  margin-top: 30px;
 }
 
 .title {

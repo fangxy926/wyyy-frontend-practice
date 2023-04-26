@@ -54,39 +54,68 @@ export default {
   loading: { color: '#fff' },
   router: {
     base: process.env.LU_YOU,
-    middleware: [],
+    middleware: ['auth'],
     routeNameSplitter: '/',
-    extendRouters(routes, resolve) {
-      routes.push(
-        {
-          name: 'home',
-          path: '/',
-          component: resolve(__dirname, 'pages/index.vue')
+    routes: [
+      {
+        name: 'home',
+        path: '/',
+        component: '~/pages/index.vue'
 
-        },
-        {
-          name: 'login',
-          path: '/login',
-          component: resolve(__dirname, 'pages/login.vue')
-        },
-        {
-          name: 'openinphone',
-          path: '/openinphone',
-          component: resolve(__dirname, 'pages/openinphone.vue')
-        },
-        {
-          name: 'newsDetail',
-          path: '/newsDetail/:newsID',
-          component: resolve(__dirname, 'pages/newsDetail.vue')
-        },
-        {
-          name: 'userinfo',
-          path: '/userinfo',
-          component: resolve(__dirname, 'pages/userinfo.vue')
+      },
+      {
+        name: 'login',
+        path: '/login',
+        component: '~/pages/login.vue'
+      },
+      {
+        name: 'openinphone',
+        path: '/openinphone',
+        component: '~/pages/openinphone.vue'
+      },
+      {
+        name: 'newsDetail',
+        path: '/newsDetail/:newsID',
+        component: '~/pages/newsDetail.vue'
+      },
+      {
+        name: 'userinfo',
+        path: '/userinfo',
+        component: '~/pages/userinfo.vue'
 
-        }
-      )
-    }
+      }
+    ],
+    // extendRouters(routes, resolve) {
+    //   routes.push(
+    //     {
+    //       name: 'home',
+    //       path: '/',
+    //       component: resolve(__dirname, 'pages/index.vue')
+
+    //     },
+    //     {
+    //       name: 'login',
+    //       path: '/login',
+    //       component: resolve(__dirname, 'pages/login.vue')
+    //     },
+    //     {
+    //       name: 'openinphone',
+    //       path: '/openinphone',
+    //       component: resolve(__dirname, 'pages/openinphone.vue')
+    //     },
+    //     {
+    //       name: 'newsDetail',
+    //       path: '/newsDetail/:newsID',
+    //       component: resolve(__dirname, 'pages/newsDetail.vue')
+    //     },
+    //     {
+    //       name: 'userinfo',
+    //       path: '/userinfo',
+    //       component: resolve(__dirname, 'pages/userinfo.vue')
+
+    //     }
+    //   )
+    // }
   },
   /*
    ** Global CSS 10.104.141.80

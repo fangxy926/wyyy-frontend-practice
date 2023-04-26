@@ -1,7 +1,12 @@
 <template>
   <div class="home">
     <Header :title-val="'首页'" />
-    <van-search v-model="search" class="menu-search" placeholder="搜索菜单" shape="round" @input="onSearch" />
+    <van-search
+      v-model="search"
+      class="menu-search"
+      placeholder="搜索菜单"
+      @input="onSearch"
+    />
     <van-divider />
     <div class="menu">
       <van-grid :column-num="3" :border="false">
@@ -75,7 +80,6 @@ export default {
   background-color: #fafafa;
   /** 不可滚动 */
   overflow: hidden;
-
 }
 
 .home .van-nav-bar__title {

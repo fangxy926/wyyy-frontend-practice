@@ -30,4 +30,14 @@ export default {
   color: #fff;
   font-size: 18px;
 }
+
+.back-naviation-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 30px;
+    z-index: 1;
+    /* 设置z-index属性，使navbar在最上层 */
+}
 </style>

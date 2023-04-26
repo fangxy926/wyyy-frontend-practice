@@ -1,5 +1,5 @@
 <template>
-  <div class="news">
+  <div class="news-container">
     <Header :title-val="'新闻'" />
     <van-list class="news-list">
       <van-cell v-for="item in newListData" :key="item.ID" :title="item.BT" @click="goToDetail(item.ID)">
@@ -62,17 +62,19 @@ export default {
 </script>
   
 <style>
-.cell-label {
-  display: flex;
-  justify-content: flex-end;
-}
-
 .news-list {
+  background-color: #fafafa;
   position: fixed;
   top: 50px;
   bottom: 50px;
+  padding: 5px;
   overflow-y: scroll;
   width: 100%;
+}
+
+.cell-label {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .van-cell::after {

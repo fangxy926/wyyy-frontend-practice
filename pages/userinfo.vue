@@ -55,7 +55,7 @@ import { Dialog } from 'vant';
 import BottomNavigationBar from '@/components/bottomNavigationBar/index.vue'
 
 export default {
-  middleware: 'auth',
+  // middleware: 'auth',
   components: {
     BottomNavigationBar,
     Header
