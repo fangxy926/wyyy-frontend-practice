@@ -23,7 +23,8 @@ import {
   List,
   Cell, CellGroup,
   Card,
-  Image as VanImage
+  Image as VanImage,
+  Swipe, SwipeItem
 } from 'vant'
 
 const components = {
@@ -43,7 +44,8 @@ const components = {
   List,
   Cell, CellGroup,
   Card,
-  VanImage
+  VanImage,
+  Swipe, SwipeItem
 }
 
 Object.keys(components).forEach((key) => {

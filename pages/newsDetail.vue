@@ -2,12 +2,17 @@
   <div class="newsDetail">
     <BackNaviationBar />
     <div class="news-body">
-      <div class="title">
+      <div class="news-title">
         {{ newsDetailData.BT }}
       </div>
-      <div class="time">
+      <div class="new-time" style="font-size: 14px;">
         {{ formatDate(newsDetailData.TJSJ) }}
       </div>
+      <van-swipe :autoplay="3000" class="image-box">
+        <van-swipe-item v-for="(item, index) in newsDetailData.IMG" :key="index">
+          <img class="news-image" :src="item.Url" width="500" height="300">
+        </van-swipe-item>
+      </van-swipe>
       <div v-dompurify-html="newsDetailData.WZNR" class="content" />
     </div>
   </div>
@@ -28,9 +33,7 @@ export default {
     }
   },
   created() {
-
     this.getNewDetail(this.$route.params.newsID)
-    // console.log(this.$route.params.newsID)
   },
   methods: {
     formatDate(date) {
@@ -40,7 +43,6 @@ export default {
       newDetail().then(res => {
         if (res.ok) {
           this.newsDetailData = res.data
-          console.log(this.newsDetailData)
         }
       })
     }
@@ -55,7 +57,7 @@ export default {
   margin-top: 30px;
 }
 
-.title {
+.news-title {
   font-weight: bold;
   font-size: 20px;
   text-align: center;
@@ -63,10 +65,9 @@ export default {
   line-height: 1.5;
 }
 
-.time {
-  font-size: 14x;
+.new-time {
   text-align: right;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   color: #b6b6b6;
 }
 
@@ -74,6 +75,22 @@ export default {
   font-size: 16px;
   line-height: 1.5;
   color: #727272;
+}
+
+.image-box {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.van-swipe-item {
+  position: relative;
+  height: 300px;
+}
+
+.news-image {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
 }
 </style>
     
