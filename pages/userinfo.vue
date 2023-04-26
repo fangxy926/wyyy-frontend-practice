@@ -102,10 +102,7 @@ export default {
       this.$refs.form.validate(valid => {
         if (valid) {
           // 表单验证通过，执行保存逻辑
-        } else {
-          // 表单验证不通过，提示错误信息
-          // this.$toast.error('请按要求填写表单');
-        }
+        } 
       });
     },
     onExist() {
@@ -131,6 +128,10 @@ export default {
   background-color: #fff;
   height: 100%;
   width: 100%;
+}
+
+.van-form .van-cell {
+  font-size: 16px;
 }
 
 .avatar {

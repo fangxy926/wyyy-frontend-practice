@@ -76,11 +76,6 @@ export default {
   height: 100%;
 }
 
-.login-box {
-  display: flex;
-  flex-direction: column;
-}
-
 .login-title {
   font-size: 30px;
   font-weight: bold;
@@ -88,12 +83,24 @@ export default {
   text-align: left;
 }
 
+.login-box  {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-box .van-cell {
+  font-size: 16px;
+}
+
+.login-box .van-cell::after {
+  border-bottom: 2px solid #d5d8dd;
+}
+
 .login-btn {
   margin-top: 35px;
   width: 100%;
 }
-
-.login-box .van-cell {
-  border-bottom: 0.5px solid #999;
+.van-button--normal {
+  font-size: 16px;
 }
 </style>

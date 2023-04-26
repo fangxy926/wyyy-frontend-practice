@@ -20,6 +20,7 @@ export default {
 <style>
 .header-class .van-nav-bar__title {
     font-weight: bold;
+    font-size: 20px;
 }
 
 .header-nav-bar {

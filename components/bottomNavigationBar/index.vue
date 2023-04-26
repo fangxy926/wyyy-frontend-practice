@@ -47,11 +47,15 @@ export default {
   width: 100%;
 }
 
+.botton-tabbar .van-tabbar-item{
+  font-size: 16px;
+}
+
 .botton-tabbar .svg-icon-class {
   width: 1rem;
   height: 1rem;
-  /* vertical-align: -0.15em; */
-  /* fill: currentColor; */
-  /* overflow: hidden; */
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
 }
 </style>

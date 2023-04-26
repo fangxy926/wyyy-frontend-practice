@@ -72,12 +72,18 @@ export default {
   width: 100%;
 }
 
-.cell-label {
+
+
+.news-container .van-cell {
+  font-size: 16px;
+}
+.news-container .cell-label {
   display: flex;
   justify-content: flex-end;
+  font-size: 14px;
 }
 
-.van-cell::after {
+.news-container .van-cell::after {
   border-bottom: 2px solid #dfe2e8;
 }
 </style>

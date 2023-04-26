@@ -1,12 +1,7 @@
 <template>
   <div class="home">
     <Header :title-val="'首页'" />
-    <van-search
-      v-model="search"
-      class="menu-search"
-      placeholder="搜索菜单"
-      @input="onSearch"
-    />
+    <van-search v-model="search" class="menu-search" placeholder="搜索菜单" @input="onSearch" />
     <van-divider />
     <div class="menu">
       <van-grid :column-num="3" :border="false">
@@ -88,5 +83,9 @@ export default {
 
 .menu-search {
   margin-top: 50px;
+}
+
+.menu .van-grid-item__text {
+  font-size: 16px;
 }
 </style>
