@@ -1,5 +1,5 @@
 <template>
-  <van-tabbar v-model="activeTabbarItem" class="botton-tabbar">
+  <van-tabbar v-model="activeTabbarItem" class="botton-tabbar" route>
     <van-tabbar-item v-for="(item, index) in items" :key="index" :name="item.name" :icon="item.icon" :to="item.path">
       {{ item.text }}
     </van-tabbar-item>
@@ -18,14 +18,15 @@ export default {
       ],
     }
   },
-  watch: {
-    '$route.name'(val) {
-      this.activeTabbarItem = val;
-    },
-  },
-  mounted() {
-    this.activeTabbarItem = this.$route.name
-  }
+  // watch: {
+  //   '$route.name'(val) {
+  //     console.log(val)
+  //     this.activeTabbarItem = val;
+  //   },
+  // },
+  // mounted() {
+  //   this.activeTabbarItem = this.$route.name
+  // }
 }
 </script>
 
