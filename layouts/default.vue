@@ -23,9 +23,6 @@ export default {
       return this.$route.query
     },
   },
-  beforeCreate() {
-    // this.$store.dispatch('user/getUser')
-  },
   mounted() {
     window.response = true
   },

@@ -35,7 +35,7 @@ export const getStorage = (params) => {
     } else if (obj.dataType === 'number') {
         content = Number(obj.content)
     } else if (obj.dataType === 'boolean') {
-        content = this.eval(obj.content)
+        content = obj.content
     } else if (obj.dataType === 'object') {
         content = obj.content
     }

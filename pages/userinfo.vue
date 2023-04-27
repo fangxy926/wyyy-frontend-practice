@@ -73,7 +73,20 @@ export default {
       userData: {}
     };
   },
-  mounted() {
+  watch: {
+    // 监听userData的变化，一旦userData中的数据发生变化就更新formData中的数据
+    userData: {
+      handler(val) {
+        this.formData.userid = val.userid
+        this.formData.name = val.name
+        this.formData.idcard = val.idcard
+        this.formData.phone = val.phone
+        this.formData.avatarUrl = val.avatarUrl || 'https://img01.yzcdn.cn/vant/cat.jpeg'
+      },
+      deep: true
+    }
+  },
+  created() {
     this.getUserInfo()
   },
   methods: {
@@ -87,22 +100,25 @@ export default {
       return isChineseName(value)
     },
     getUserInfo() {
-      userInfo().then(res => {
-        if (res.ok) {
-          this.userData = res.data
-          this.formData.userid = this.userData.userid
-          this.formData.name = this.userData.name
-          this.formData.idcard = this.userData.idcard
-          this.formData.phone = this.userData.phone
-          this.formData.avatarUrl = this.userData.avatarUrl || 'https://img01.yzcdn.cn/vant/cat.jpeg'
-        }
-      })
+      const userinfo = this.$store.state.user.user
+      if (!userinfo) {
+        console.log('调用后端获取用户信息')
+        userInfo().then(res => {
+          if (res.ok) {
+            this.userData = res.data
+            this.$store.dispatch('user/setUser', this.userData)
+          }
+        })
+      } else {
+        console.log('从本地store获取用户信息')
+        this.userData = userinfo
+      }
     },
     onSave() {
       this.$refs.form.validate(valid => {
         if (valid) {
           // 表单验证通过，执行保存逻辑
-        } 
+        }
       });
     },
     onExist() {

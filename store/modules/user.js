@@ -1,10 +1,14 @@
 
-import { setStorage, getStorage, removeStorage } from '@/utils/storage.js'
+import { setStorage, removeStorage } from '@/utils/storage.js'
 const state = {
+    isLogin: false,
     user: null
 }
 
 const mutations = {
+    setIsLogin(state, isLogin) {
+        state.isLogin = isLogin
+    },
     setUser(state, user) {
         state.user = user
     }
@@ -12,28 +16,31 @@ const mutations = {
 
 const actions = {
     userLogin: ({ commit }, user) => {
-        console.log(user)
+        commit('setIsLogin', true)
+        setStorage({
+            name: 'islogin',
+            content: true,
+            type: 'session'
+        })
+    },
+    userLogout: ({ commit }) => {
+        commit('setIsLogin', false)
+        removeStorage({ name: 'islogin' })
+        commit('setUser', null)
+        removeStorage({ name: 'userinfo' })
+    },
+    setUser: ({ commit }, user) => {
         commit('setUser', user)
         setStorage({
             name: 'userinfo',
             content: user,
             type: 'session'
         })
-    },
-    getUser: ({ commit }) => {
-        const userinfo = getStorage({ name: "userinfo" })
-        console.log("userinfo in storage" + userinfo)
-        if (userinfo) {
-            commit('setUser', userinfo)
-        }
-    },
-    userLogout: ({ commit }) => {
-        commit('setUser', null)
-        removeStorage({ name: 'userinfo' })
     }
 }
 
 const getters = {
+    isLogin: state => state.isLogin,
     user: state => state.user
 }
 

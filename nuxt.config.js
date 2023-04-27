@@ -100,6 +100,7 @@ export default {
   plugins: [
     { src: '@/plugins/localStorage.js', mode: 'client' },
     { src: '@/plugins/auth.js', mode: 'client' },
+    { src: '@/plugins/user.js', mode: 'client' },
     '@/plugins/vant.js',
     '@/plugins/utils.js',
     '@/plugins/extend',
