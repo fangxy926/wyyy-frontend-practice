@@ -9,8 +9,16 @@
       </van-field> -->
       <van-field class="avatar-field" label="头像" right-icon="" readonly>
         <template #right-icon>
-          <van-uploader v-model="avatarList" class="avatar-uploader" :after-read="afterRead" :before-read="beforeRead"
-            :max-count="1" preview-size="60px" :preview-full-image="false" accept="image/*" />
+          <van-uploader
+            v-model="avatarList"
+            class="avatar-uploader"
+            :after-read="afterRead"
+            :before-read="beforeRead"
+            :max-count="1"
+            preview-size="60px"
+            :preview-full-image="false"
+            accept="image/*"
+          />
         </template>
       </van-field>
       <van-field v-model="formData.name" name="name" label="姓名" placeholder="请输入姓名" :rules="rules.name" />
