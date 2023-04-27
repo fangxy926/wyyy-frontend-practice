@@ -5,14 +5,11 @@
     <van-divider />
     <div class="menu">
       <van-grid :column-num="3" :border="false">
-        <van-grid-item
-          v-for="(item, index) in list"
-          :key="index"
-          :text="item.menuName"
-          :icon="item.iconName"
-          :url="item.pathUrl"
-          center
-        />
+        <van-grid-item v-for="(item, index) in list" :key="index" :text="item.menuName" :url="item.pathUrl" center>
+          <template #icon>
+            <svg-icon icon-class="menu" class-name="menu-icon" />
+          </template>
+        </van-grid-item>
       </van-grid>
     </div>
     <BottomNavigationBar />
@@ -87,5 +84,10 @@ export default {
 
 .menu .van-grid-item__text {
   font-size: 16px;
+}
+
+.menu .svg-icon {
+  width: 2rem;
+  height: 2rem;
 }
 </style>

@@ -38,7 +38,7 @@ export default {
   },
 }
 </script>
-<style lang="stylus" scoped>
+<style scoped>
 .svg-icon {
   width: 1rem;
   height: 1rem;
