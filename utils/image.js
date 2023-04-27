@@ -71,7 +71,7 @@ function dataURItoBuffer(dataURI){
     }
     return buffer;
 }
-function dataURItoBlob(dataURI) {
+export function dataURItoBlob(dataURI) {
     const mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
     const buffer = dataURItoBuffer(dataURI);
     return new Blob([buffer], {type: mimeString});
@@ -224,5 +224,5 @@ function compress(file, options, callback) {
 }
 
 export default {
-    compress
+    compress,
 };

@@ -2,9 +2,23 @@
   <div class="personal-info">
     <Header :title-val="'个人信息'" />
     <van-form ref="userForm" :model="formData" label-width="80px" :rules="rules" @submit="onSubmit">
-      <van-field class="avatar-field" label="头像" right-icon="" readonly>
+      <!-- <van-field class="avatar-field" label="头像" right-icon="" readonly>
         <template #right-icon>
           <van-image class="avatar" width="50" height="50" fit="cover" :src="formData.avatarUrl" />
+        </template>
+      </van-field> -->
+      <van-field class="avatar-field" label="头像" right-icon="" readonly>
+        <template #right-icon>
+          <van-uploader
+            v-model="avatarList"
+            class="avatar-uploader"
+            :after-read="afterRead"
+            :before-read="beforeRead"
+            :max-count="1"
+            preview-size="60px"
+            :preview-full-image="false"
+            accept="image/*"
+          />
         </template>
       </van-field>
       <van-field v-model="formData.name" name="name" label="姓名" placeholder="请输入姓名" :rules="rules.name" />
@@ -45,6 +59,7 @@ export default {
         mail: '',
         avatarUrl: ''
       },
+      avatarList: [],
       formDataCopy: {},
       activeTabbarItem: 'userinfo',
       userData: {},
@@ -73,8 +88,9 @@ export default {
         this.formData.name = val.name
         this.formData.idcard = val.idcard
         this.formData.phone = val.phone
-        this.formData.avatarUrl = val.avatarUrl || 'https://img01.yzcdn.cn/vant/cat.jpeg'
+        this.formData.avatarUrl = val.avatarUrl || require('../assets/images/avatar/cat.jpg') // 'https://img01.yzcdn.cn/vant/cat.jpeg'
         this.formDataCopy = JSON.parse(JSON.stringify(this.formData))
+        this.avatarList = [{ url: this.formData.avatarUrl }]
       },
       deep: true
     },
@@ -122,11 +138,23 @@ export default {
         console.log('从本地store获取用户信息')
         this.userData = userinfo
       }
-      // this.formData.userid = this.userData.userid
-      // this.formData.name = this.userData.name
-      // this.formData.idcard = this.userData.idcard
-      // this.formData.phone = this.userData.phone
-      // this.formData.avatarUrl = this.userData.avatarUrl || 'https://img01.yzcdn.cn/vant/cat.jpeg'
+    },
+    beforeRead(file) {
+      if (file.type !== 'image/jpeg' && file.type !== 'image/png') {
+        this.$toast('只能上传jpg或png格式的图片');
+        return false;
+      }
+      if (file.size > 2 * 1024 * 1024) {
+        this.$toast('图片大小不能超过2MB');
+        return false;
+      }
+      return true;
+    },
+    afterRead(file) {
+      this.avatarList = [file]
+      // 文件上传逻辑，返回新的文件url
+      const newUrl = require('../assets/images/avatar/leaf.jpg')
+      this.formData.avatarUrl = newUrl
     },
     checkModifiy() {
       this.modified = true
@@ -143,6 +171,7 @@ export default {
             this.userData.name = this.formData.name
             this.userData.idcard = this.formData.idcard
             this.userData.phone = this.formData.phone
+            this.userData.avatarUrl = this.formData.avatarUrl
             this.$store.dispatch('user/setUser', this.userData)
           }).catch(() => {
             // on cancel
@@ -180,23 +209,14 @@ export default {
   font-size: 16px;
 }
 
-.avatar {
-  margin-right: 10px;
-  border-radius: 50%;
-}
-
-.avatar-field {
-  height: 60px;
-}
-
-.avatar-field .van-field__label {
-  line-height: 50px;
-  /* 与 van-image 的高度一致 */
-}
-
-.avatar-field .van-field__control {
+.avatar-field .van-field__label,
+.avatar-field .van-field__right-icon {
   display: flex;
   align-items: flex-end;
+}
+
+.avatar-uploader {
+  margin-left: 10px;
 }
 
 .personal-info .van-form {
