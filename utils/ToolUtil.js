@@ -93,7 +93,7 @@ export function isIdCard(str) {
  * @return {Boolean}
  */
 export function isRightIdCard(str) {
-  console.log(isIdCardNo(str))
+  // console.log(isIdCardNo(str))
   if (isIdCardNo(str).success !== 0) {
     return true
   } else {
@@ -207,4 +207,14 @@ export function throttle(fn, t) {
  */
 export function md5Encrypt(str) {
   return CryptoJS.MD5(str).toString();
+}
+
+/**
+ * 比较两个对象是否相同
+ * @param {*} obj1 
+ * @param {*} obj2 
+ * @returns 
+ */
+export function isSameObj(obj1, obj2) {
+  return JSON.stringify(obj1) === JSON.stringify(obj2);
 }

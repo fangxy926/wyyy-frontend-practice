@@ -51,17 +51,19 @@ export default {
   },
   methods: {
     onSubmit() {
-      const valid = this.$refs.loginForm.validate();
-      if (valid) {
-        this.loading = true;
-        // 在这里编写登录逻辑
-        this.loginForm.password = md5Encrypt(this.loginForm.password)
-        // todo 用户信息保存在storage中
-        this.$store.dispatch('user/userLogin', this.loginForm)
-        this.$store.dispatch('tabbar/setActiveTabbarItem', 'home')
-        this.$router.push("/")
-        this.loading = false
-      }
+      this.$refs.loginForm.validate()
+        .then(() => {
+          this.loading = true;
+          // 在这里编写登录逻辑
+          this.loginForm.password = md5Encrypt(this.loginForm.password)
+          // todo 用户信息保存在storage中
+          this.$store.dispatch('user/userLogin', this.loginForm)
+          this.$store.dispatch('tabbar/setActiveTabbarItem', 'home')
+          this.$router.push("/")
+          this.loading = false
+        }).catch(() => {
+
+        })
     },
   },
 };
@@ -83,7 +85,7 @@ export default {
   text-align: left;
 }
 
-.login-box  {
+.login-box {
   display: flex;
   flex-direction: column;
 }
@@ -100,6 +102,7 @@ export default {
   margin-top: 35px;
   width: 100%;
 }
+
 .van-button--normal {
   font-size: 16px;
 }
